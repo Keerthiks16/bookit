@@ -1,4 +1,6 @@
-import { useState, FormEvent, ChangeEvent } from "react";
+import { useState } from "react";
+import type { FormEvent, ChangeEvent } from "react";
+
 import { useNavigate } from "react-router-dom";
 import apiClient from "../api/apiClient";
 import { Loader2, AlertCircle, CheckCircle, Upload } from "lucide-react";

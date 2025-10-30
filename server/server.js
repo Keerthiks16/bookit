@@ -15,8 +15,35 @@ dotenv.config();
 const app = express();
 
 // --- Core Middleware ---
-// Enable CORS for all origins
-app.use(cors());
+
+// --- UPDATED CORS CONFIGURATION ---
+// Define your allowed origins
+const allowedOrigins = [
+  "http://localhost:5173", // Your local frontend
+  "https://bookit-axih.onrender.com", // Your deployed backend (for self-requests if any)
+  // Add your DEPLOYED FRONTEND URL here when you have it, e.g.:
+  // 'https://bookit-client.onrender.com'
+];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    // Check if the origin is in the allowed list or if it's a non-browser request (like Postman)
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true, // This allows cookies/authorization headers to be sent
+};
+
+// Enable CORS with specific options
+// This single line should be sufficient to handle all requests, including preflight OPTIONS.
+app.use(cors(corsOptions));
+
+// Handle preflight requests (OPTIONS) for all routes
+// This is crucial for complex requests (like POST with JSON or auth headers)
+// app.options('*', cors(corsOptions)); // <-- This line was causing the crash
 
 // Parse incoming JSON requests
 app.use(express.json());

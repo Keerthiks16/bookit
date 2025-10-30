@@ -1,4 +1,6 @@
-import { useState, useEffect, FormEvent, ChangeEvent } from "react";
+import { useState, useEffect } from "react";
+import type { FormEvent, ChangeEvent } from "react";
+
 import { Link } from "react-router-dom";
 import apiClient from "../api/apiClient";
 import type { Experience } from "../types";

@@ -20,7 +20,7 @@ const app = express();
 // Define your allowed origins
 const allowedOrigins = [
   "http://localhost:5173", // Your local frontend
-  "https://bookit-axih.onrender.com", // Your deployed backend (for self-requests if any)
+  "https://bookit-6hm4.vercel.app", // Your deployed backend (for self-requests if any)
   // Add your DEPLOYED FRONTEND URL here when you have it, e.g.:
   // 'https://bookit-client.onrender.com'
 ];

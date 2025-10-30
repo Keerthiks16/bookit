@@ -1,10 +1,12 @@
-import { useState, useEffect, FormEvent } from "react";
+import { useState, useEffect } from "react";
+import type { FormEvent } from "react";
+
 import { useNavigate } from "react-router-dom";
 import { useBookingStore } from "../store/bookingStore";
 import { useAuthStore } from "../store/authStore";
 import apiClient from "../api/apiClient";
 import type { ValidPromo } from "../types";
-import { Loader2, AlertCircle, Ticket, CheckCircle } from "lucide-react";
+import { Loader2, AlertCircle, CheckCircle } from "lucide-react";
 
 const CheckoutPage = () => {
   const navigate = useNavigate();

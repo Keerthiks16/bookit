@@ -66,4 +66,5 @@ export interface ValidPromo {
 export interface ExperienceDetailsResponse {
   experience: Experience;
   availableSlots: AvailableSlot[];
+  data: any;
 }

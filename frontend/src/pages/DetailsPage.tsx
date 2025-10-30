@@ -13,7 +13,6 @@ import {
   MapPin,
   Calendar,
   Clock,
-  Users,
   Minus,
   Plus,
   ArrowLeft, // Added for back button
